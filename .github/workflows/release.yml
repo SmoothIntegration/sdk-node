@@ -1,0 +1,69 @@
+name: Release
+
+on:
+    push:
+        tags:
+            - 'v*.*.*'
+
+jobs:
+    release:
+        runs-on: ubuntu-latest
+
+        steps:
+            # Step 1: Checkout the repository
+            - name: Checkout code
+              uses: actions/checkout@v4
+
+            # Step 2: Install PNPM
+            - name: Install pnpm
+              uses: pnpm/action-setup@v4
+
+            # Step 3: Set up Node.js
+            - name: Set up Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: 18
+                  cache: 'pnpm'
+
+            # Step 4: Install dependencies
+            - name: Install dependencies
+              run: pnpm run ci
+
+            # Step 5: Verify Git Tag Matches package.json Version
+            - name: Verify Git Tag Matches package.json Version
+              id: version_check
+              run: |
+                  TAG_VERSION=${GITHUB_REF#refs/tags/} # Extract tag (e.g., v1.2.3)
+                  echo "Git Tag: $TAG_VERSION"
+                  PACKAGE_VERSION=$(node -p "require('./package.json').version")
+                  echo "package.json Version: $PACKAGE_VERSION"
+                  if [ "$TAG_VERSION" != "v$PACKAGE_VERSION" ]; then
+                    echo "Error: Git tag ($TAG_VERSION) does not match package.json version (v$PACKAGE_VERSION)."
+                    exit 1
+                  fi
+              env:
+                  GITHUB_REF: ${{ github.ref }}
+
+            # Step 6: Lint
+            - name: Type-check with TypeScript
+              run: pnpm run lint
+
+            # Step 7: Type-check
+            - name: Type-check with TypeScript
+              run: pnpm run verify
+
+            # Step 8: Run tests
+            - name: Run tests
+              run: pnpm run test
+
+            # Step 9: Build with tsup
+            - name: Build package
+              run: pnpm run build
+
+            # Step 10: Authenticate with npm
+            - name: Authenticate npm
+              run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+
+            # Step 11: Publish package
+            - name: Publish to npm
+              run: npm publish --access public

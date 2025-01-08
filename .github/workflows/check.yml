@@ -1,0 +1,47 @@
+name: Check
+
+on:
+    push:
+        branches:
+            - master
+    pull_request:
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            # Step 1: Checkout the repository
+            - name: Checkout code
+              uses: actions/checkout@v4
+
+            # Step 2: Install PNPM
+            - name: Install pnpm
+              uses: pnpm/action-setup@v4
+
+            # Step 3: Set up Node.js
+            - name: Set up Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: 18
+                  cache: 'pnpm'
+
+            # Step 4: Install dependencies
+            - name: Install dependencies
+              run: pnpm run ci
+
+            # Step 5: Lint
+            - name: Type-check with TypeScript
+              run: pnpm run lint
+
+            # Step 6: Type-check
+            - name: Type-check with TypeScript
+              run: pnpm run verify
+
+            # Step 7: Run tests
+            - name: Run tests
+              run: pnpm run test
+
+            # Step 8: Build with tsup
+            - name: Build package
+              run: pnpm run build

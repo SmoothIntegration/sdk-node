@@ -1,0 +1,15 @@
+{
+    "plugins": ["prettier-plugin-astro", "@trivago/prettier-plugin-sort-imports"],
+    "printWidth": 120,
+    "tabWidth": 4,
+    "useTabs": false,
+    "semi": true,
+    "trailingComma": "all",
+    "bracketSpacing": true,
+    "singleQuote": true,
+    "arrowParens": "always",
+    "endOfLine": "lf",
+    "importOrder": ["^@smooth-integration/(.*)$", "^[./]"],
+    "importOrderSeparation": true,
+    "importOrderSortSpecifiers": true
+}
