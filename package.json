@@ -2,9 +2,14 @@
     "private": false,
     "name": "@smooth-integration/sdk-node",
     "packageManager": "pnpm@9.11.0",
-    "version": "0.2.6",
+    "version": "0.2.7",
     "author": "Smooth Integration",
     "license": "MIT",
+    "homepage": "https://smooth-integration.com/",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/SmoothIntegration/sdk-node.git"
+    },
     "files": [
         "package.json",
         "dist"

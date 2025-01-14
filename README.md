@@ -1,6 +1,8 @@
 # SmoothIntegration Node.js Library
 
+[![Version](https://img.shields.io/npm/v/@smooth-integration/sdk-node.svg)](https://www.npmjs.org/package/@smooth-integration/sdk-node)
 [![Build Status](https://github.com/SmoothIntegration/sdk-node/actions/workflows/check.yml/badge.svg?branch=master)](https://github.com/SmoothIntegration/sdk-node/actions?query=branch%3Amaster)
+[![Try on RunKit](https://badge.runkitcdn.com/@smooth-integration/sdk-node.svg)](https://runkit.com/npm/@smooth-integration/sdk-node)
 
 The SmoothIntegration Node library provides convenient access to the SmoothIntegration API from
 applications written in server-side JavaScript.
