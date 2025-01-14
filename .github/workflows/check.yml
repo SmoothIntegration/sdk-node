@@ -45,3 +45,7 @@ jobs:
             # Step 8: Build with tsup
             - name: Build package
               run: pnpm run build
+
+            # Step 9: Post coverage to Coveralls
+            - name: Coveralls
+              uses: coverallsapp/github-action@v2

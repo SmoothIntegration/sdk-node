@@ -2,6 +2,7 @@
 
 [![Version](https://img.shields.io/npm/v/@smooth-integration/sdk-node.svg)](https://www.npmjs.org/package/@smooth-integration/sdk-node)
 [![Build Status](https://github.com/SmoothIntegration/sdk-node/actions/workflows/check.yml/badge.svg?branch=master)](https://github.com/SmoothIntegration/sdk-node/actions?query=branch%3Amaster)
+[![Coverage Status](https://coveralls.io/repos/github/SmoothIntegration/sdk-node/badge.svg?branch=master)](https://coveralls.io/github/SmoothIntegration/sdk-node?branch=master)
 [![Try on RunKit](https://badge.runkitcdn.com/@smooth-integration/sdk-node.svg)](https://runkit.com/npm/@smooth-integration/sdk-node)
 
 The SmoothIntegration Node library provides convenient access to the SmoothIntegration API from

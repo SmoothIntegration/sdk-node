@@ -11,6 +11,9 @@ const jestConfig: JestConfigWithTsJest = {
     roots: ['<rootDir>'],
     modulePaths: ['<rootDir>'],
     testMatch: ['**/*.test.ts'],
+    collectCoverage: true,
+    coverageDirectory: 'coverage',
+    coverageReporters: ['lcov'],
 };
 
 export default jestConfig;
