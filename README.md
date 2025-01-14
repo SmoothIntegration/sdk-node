@@ -37,7 +37,7 @@ The package needs to be configured with your client id and client secret, which 
 available in the [SmoothIntegration Dashboard](https://app.smooth-integration.com/secrets). Require it with values:
 
 ```js
-const client = require('@smooth-integration/node-sdk')('<your_client_id>', '<your_client_secret>');
+const client = require('@smooth-integration/sdk-node')('<your_client_id>', '<your_client_secret>');
 
 client.cdc
     .get({
@@ -50,7 +50,7 @@ client.cdc
 Or using ES modules and `async`/`await`:
 
 ```js
-import Client from '@smooth-integration/node-sdk';
+import Client from '@smooth-integration/sdk-node';
 
 const client = new Client('<your_client_id>', '<your_client_secret>');
 
@@ -64,7 +64,7 @@ console.log(events);
 ## Usage with TypeScript
 
 ```ts
-import Client, { CDCConfig, Event } from '@smooth-integration/node-sdk';
+import Client, { CDCConfig, Event } from '@smooth-integration/sdk-node';
 
 const client: Client = new Client('<your_client_id>', '<your_client_secret>');
 
@@ -83,7 +83,7 @@ logEvents();
 Import using npm specifiers:
 
 ```ts
-import Client from 'npm:@smooth-integration/node-sdk';
+import Client from 'npm:@smooth-integration/sdk-node';
 ```
 
 ## Streaming Events
@@ -92,7 +92,7 @@ If you want to receive new events as they come in, we recommend to use the built
 polling using `client.cdc.get` yourself.
 
 ```ts
-import Client, { Event } from '@smooth-integration/node-sdk';
+import Client, { Event } from '@smooth-integration/sdk-node';
 
 const client: Client = new Client('<your_client_id>', '<your_client_secret>');
 

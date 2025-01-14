@@ -1,5 +1,6 @@
-import Client, { Event } from '@smooth-integration/node-sdk';
 import express, { Request, Response } from 'express';
+
+import Client, { Event } from '@smooth-integration/sdk-node';
 
 // Create an express server, can be any server
 const app = express();
