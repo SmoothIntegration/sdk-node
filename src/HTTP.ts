@@ -9,24 +9,6 @@ export default class HTTP {
         this._client = client;
     }
 
-    private async readableStreamToString(readableStream: ReadableStream) {
-        const decoder = new TextDecoder();
-        let result = '';
-        const reader = readableStream.getReader();
-
-        while (true) {
-            const { done, value } = await reader.read();
-            if (done) {
-                break;
-            }
-            result += decoder.decode(value, { stream: true });
-        }
-
-        // Decode any remaining data
-        result += decoder.decode();
-        return result;
-    }
-
     private async generateHMAC(request: Request, requestBody?: RequestInit['body']): Promise<[string, string]> {
         const timestamp: string = new Date().toISOString();
         const hmac = createHmac('sha256', this._client.clientSecret);
@@ -61,13 +43,14 @@ export default class HTTP {
             throw new SIError(error.message || 'Network Error', error);
         }
 
+        let body;
+        try {
+            body = await response.json();
+        } catch (error: unknown) {
+            throw new SIError('Invalid JSON Received', error);
+        }
+
         if (!response.ok) {
-            let body;
-            try {
-                body = await response.json();
-            } catch (error: unknown) {
-                throw new SIError(response.statusText, error);
-            }
             if (response.status >= 500) {
                 throw new SIError(response.statusText);
             } else {
@@ -76,6 +59,6 @@ export default class HTTP {
             }
         }
 
-        return await response.json();
+        return body;
     }
 }

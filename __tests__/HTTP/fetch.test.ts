@@ -1,7 +1,7 @@
 import fetchMock from 'jest-fetch-mock';
 import { createHmac } from 'node:crypto';
 
-import SIClient from '../../src';
+import SIClient, { SIError } from '../../src';
 import { TEST_CLIENT_ID, TEST_CLIENT_SECRET } from '../testUtils';
 
 jest.useFakeTimers().setSystemTime(new Date('2025-01-01T00:00:00.000Z'));
@@ -132,5 +132,34 @@ describe('HTTP: fetch', () => {
             },
         });
         expect(response).toEqual({ success: true });
+    });
+
+    test('Handles Networking Errors', async () => {
+        fetchMock.mockResponseOnce(() => {
+            return Promise.reject(new Error('Network Error'));
+        });
+        const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
+        await expect(client.http.fetch('/test?query=param')).rejects.toThrow(
+            expect.objectContaining({
+                name: SIError.name,
+                message: 'Network Error',
+            }),
+        );
+    });
+
+    test('Handles unparsable response bodies', async () => {
+        fetchMock.mockResponseOnce(() => {
+            return Promise.resolve({
+                body: '<not-a-valid-json-string>',
+                status: 200,
+            });
+        });
+        const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
+        await expect(client.http.fetch('/test?query=param')).rejects.toThrow(
+            expect.objectContaining({
+                name: SIError.name,
+                message: 'Invalid JSON Received',
+            }),
+        );
     });
 });

@@ -4,10 +4,14 @@ import { TEST_CLIENT_ID, TEST_CLIENT_SECRET, TEST_DATASOURCE_ID, mockFetch } fro
 describe('FreeAgent: startImport', () => {
     test('Returns void on 200 Response', async () => {
         mockFetch({
-            method: 'POST',
-            url: '/data/import/0730d67d-7d48-4a3a-8a72-04c0a4666fd0',
-            response: { message: 'Import Started' },
-            status: 200,
+            request: {
+                method: 'POST',
+                url: 'https://api.smooth-integration.com/data/import/0730d67d-7d48-4a3a-8a72-04c0a4666fd0',
+            },
+            response: {
+                status: 200,
+                body: JSON.stringify({ message: 'Import Started' }),
+            },
         });
 
         const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
@@ -16,10 +20,14 @@ describe('FreeAgent: startImport', () => {
 
     test('Raises SIError: Bad Request on 400 Response', async () => {
         mockFetch({
-            method: 'POST',
-            url: '/data/import/0730d67d-7d48-4a3a-8a72-04c0a4666fd0',
-            response: { message: 'Invalid DataSource ID' },
-            status: 400,
+            request: {
+                method: 'POST',
+                url: 'https://api.smooth-integration.com/data/import/0730d67d-7d48-4a3a-8a72-04c0a4666fd0',
+            },
+            response: {
+                status: 400,
+                body: JSON.stringify({ message: 'Invalid DataSource ID' }),
+            },
         });
 
         const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
@@ -33,10 +41,14 @@ describe('FreeAgent: startImport', () => {
 
     test('Raises SIError: Unauthorized on 401 Response', async () => {
         mockFetch({
-            method: 'POST',
-            url: '/data/import/0730d67d-7d48-4a3a-8a72-04c0a4666fd0',
-            response: { message: "Invalid 'X-Organisation' header" },
-            status: 401,
+            request: {
+                method: 'POST',
+                url: 'https://api.smooth-integration.com/data/import/0730d67d-7d48-4a3a-8a72-04c0a4666fd0',
+            },
+            response: {
+                status: 401,
+                body: JSON.stringify({ message: "Invalid 'X-Organisation' header" }),
+            },
         });
 
         const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
@@ -50,10 +62,14 @@ describe('FreeAgent: startImport', () => {
 
     test('Raises SIError: Internal Server Error on 5xx Response', async () => {
         mockFetch({
-            method: 'POST',
-            url: '/data/import/0730d67d-7d48-4a3a-8a72-04c0a4666fd0',
-            response: {},
-            status: 500,
+            request: {
+                method: 'POST',
+                url: 'https://api.smooth-integration.com/data/import/0730d67d-7d48-4a3a-8a72-04c0a4666fd0',
+            },
+            response: {
+                status: 500,
+                body: JSON.stringify({ message: 'Internal Server Error' }),
+            },
         });
 
         const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);

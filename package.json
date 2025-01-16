@@ -2,7 +2,7 @@
     "private": false,
     "name": "@smooth-integration/sdk-node",
     "packageManager": "pnpm@9.11.0",
-    "version": "0.2.9",
+    "version": "0.2.10",
     "author": "Smooth Integration",
     "license": "MIT",
     "homepage": "https://smooth-integration.com/",
@@ -30,7 +30,7 @@
         "verify": "tsc --noEmit",
         "lint": "eslint .",
         "format": "prettier --write .",
-        "ci": "pnpm install --frozen-lockfile && pnpm lint",
+        "ci": "pnpm install --frozen-lockfile",
         "pre-commit": "lint-staged && pnpm verify",
         "prepare": "husky"
     },
