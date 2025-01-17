@@ -2,7 +2,7 @@
     "private": false,
     "name": "@smooth-integration/sdk-node",
     "packageManager": "pnpm@9.11.0",
-    "version": "0.2.11",
+    "version": "0.2.12",
     "author": "Smooth Integration",
     "license": "MIT",
     "homepage": "https://smooth-integration.com/",
