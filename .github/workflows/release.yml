@@ -9,6 +9,10 @@ jobs:
     release:
         runs-on: ubuntu-latest
 
+        permissions:
+            contents: read
+            id-token: write
+
         steps:
             # Step 1: Checkout the repository
             - name: Checkout code
@@ -64,6 +68,10 @@ jobs:
             - name: Authenticate npm
               run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
 
-            # Step 11: Publish package
+            # Step 11: Publish package to NPM
             - name: Publish to npm
               run: npm publish --access public
+
+            # Step 11: Publish package to JSR
+            - name: Publish to jsr
+              run: npx jsr publish

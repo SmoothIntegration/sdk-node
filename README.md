@@ -8,6 +8,8 @@
 The SmoothIntegration Node library provides convenient access to the SmoothIntegration API from
 applications written in server-side JavaScript.
 
+By https://smooth-integration.com
+
 ## Documentation
 
 See the [`@smooth-integration/sdk-node` API docs](https://smooth-integration.com/docs) for Node.js.
