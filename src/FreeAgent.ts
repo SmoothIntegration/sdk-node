@@ -19,7 +19,7 @@ export default class FreeAgent {
     }
 
     public async getConsentUrl(companyId: string, sandBox: boolean = false): Promise<string> {
-        let url = '/freeagent/connect?company_id=' + companyId;
+        let url = '/v1/freeagent/connect?company_id=' + companyId;
         if (sandBox) {
             url += '&sandbox=true';
         }
@@ -28,7 +28,7 @@ export default class FreeAgent {
     }
 
     public async startImport(dataSourceId: string): Promise<void> {
-        await this._client.http.fetch<StartImportResponse>('/data/import/' + dataSourceId, {
+        await this._client.http.fetch<StartImportResponse>('/v1/data/import/' + dataSourceId, {
             method: 'POST',
         });
     }

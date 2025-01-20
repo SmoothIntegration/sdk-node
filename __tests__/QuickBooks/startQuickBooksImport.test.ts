@@ -6,7 +6,7 @@ describe('QuickBooks: startImport', () => {
         mockFetch({
             request: {
                 method: 'POST',
-                url: 'https://api.smooth-integration.com/data/import/0730d67d-7d48-4a3a-8a72-04c0a4666fd0',
+                url: 'https://api.smooth-integration.com/v1/data/import/0730d67d-7d48-4a3a-8a72-04c0a4666fd0',
             },
             response: {
                 status: 200,
@@ -22,7 +22,7 @@ describe('QuickBooks: startImport', () => {
         mockFetch({
             request: {
                 method: 'POST',
-                url: 'https://api.smooth-integration.com/data/import/0730d67d-7d48-4a3a-8a72-04c0a4666fd0',
+                url: 'https://api.smooth-integration.com/v1/data/import/0730d67d-7d48-4a3a-8a72-04c0a4666fd0',
             },
             response: {
                 status: 400,
@@ -43,7 +43,7 @@ describe('QuickBooks: startImport', () => {
         mockFetch({
             request: {
                 method: 'POST',
-                url: 'https://api.smooth-integration.com/data/import/0730d67d-7d48-4a3a-8a72-04c0a4666fd0',
+                url: 'https://api.smooth-integration.com/v1/data/import/0730d67d-7d48-4a3a-8a72-04c0a4666fd0',
             },
             response: {
                 status: 401,
@@ -64,7 +64,7 @@ describe('QuickBooks: startImport', () => {
         mockFetch({
             request: {
                 method: 'POST',
-                url: 'https://api.smooth-integration.com/data/import/0730d67d-7d48-4a3a-8a72-04c0a4666fd0',
+                url: 'https://api.smooth-integration.com/v1/data/import/0730d67d-7d48-4a3a-8a72-04c0a4666fd0',
             },
             response: {
                 status: 500,

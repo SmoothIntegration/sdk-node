@@ -6,7 +6,7 @@ describe('FreeAgent: getConsentUrl', () => {
         mockFetch({
             request: {
                 method: 'GET',
-                url: 'https://api.smooth-integration.com/freeagent/connect?company_id=a5c8d02c-f8dd-45ee-9495-53c1781501b7',
+                url: 'https://api.smooth-integration.com/v1/freeagent/connect?company_id=a5c8d02c-f8dd-45ee-9495-53c1781501b7',
             },
             response: {
                 status: 200,
@@ -28,7 +28,7 @@ describe('FreeAgent: getConsentUrl', () => {
         mockFetch({
             request: {
                 method: 'GET',
-                url: 'https://api.smooth-integration.com/freeagent/connect?company_id=a5c8d02c-f8dd-45ee-9495-53c1781501b7&sandbox=true',
+                url: 'https://api.smooth-integration.com/v1/freeagent/connect?company_id=a5c8d02c-f8dd-45ee-9495-53c1781501b7&sandbox=true',
             },
             response: {
                 status: 200,
@@ -50,7 +50,7 @@ describe('FreeAgent: getConsentUrl', () => {
         mockFetch({
             request: {
                 method: 'GET',
-                url: 'https://api.smooth-integration.com/freeagent/connect?company_id=a5c8d02c-f8dd-45ee-9495-53c1781501b7',
+                url: 'https://api.smooth-integration.com/v1/freeagent/connect?company_id=a5c8d02c-f8dd-45ee-9495-53c1781501b7',
             },
             response: {
                 status: 400,
@@ -71,7 +71,7 @@ describe('FreeAgent: getConsentUrl', () => {
         mockFetch({
             request: {
                 method: 'GET',
-                url: 'https://api.smooth-integration.com/freeagent/connect?company_id=invalid-company-id',
+                url: 'https://api.smooth-integration.com/v1/freeagent/connect?company_id=invalid-company-id',
             },
             response: {
                 status: 401,
@@ -92,7 +92,7 @@ describe('FreeAgent: getConsentUrl', () => {
         mockFetch({
             request: {
                 method: 'GET',
-                url: 'https://api.smooth-integration.com/freeagent/connect?company_id=a5c8d02c-f8dd-45ee-9495-53c1781501b7',
+                url: 'https://api.smooth-integration.com/v1/freeagent/connect?company_id=a5c8d02c-f8dd-45ee-9495-53c1781501b7',
             },
             response: {
                 status: 500,

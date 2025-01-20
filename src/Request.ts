@@ -14,7 +14,7 @@ export default class Request {
      * @param input {RequestInit} any additional request options you want to pass to the request.
      */
     public async request<T>(dataSourceId: DataSourceId, url: string, input: RequestInit): Promise<T> {
-        return this._client.http.fetch<T>('/request/' + dataSourceId + url, input);
+        return this._client.http.fetch<T>('/v1/request/' + dataSourceId + url, input);
     }
 
     /**

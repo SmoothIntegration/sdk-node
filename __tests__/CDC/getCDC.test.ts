@@ -21,7 +21,7 @@ describe('CDC: get', () => {
         mockFetch({
             request: {
                 method: 'GET',
-                url: 'https://api.smooth-integration.com/cdc?from=0&structure=raw',
+                url: 'https://api.smooth-integration.com/v1/cdc?from=0&structure=raw',
             },
             response: {
                 status: 200,
@@ -42,7 +42,7 @@ describe('CDC: get', () => {
                 method: 'GET',
                 // Ensure all parameters are passed correctly
                 url:
-                    'https://api.smooth-integration.com/cdc' +
+                    'https://api.smooth-integration.com/v1/cdc' +
                     '?from=123456789012345678' +
                     '&structure=raw' +
                     '&limit=678' +

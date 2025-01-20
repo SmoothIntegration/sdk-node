@@ -29,7 +29,7 @@ export default class CDC {
         if (config.meta) {
             params.append('meta', config.meta);
         }
-        return this._client.http.fetch<CDCResponse>('/cdc?' + params.toString());
+        return this._client.http.fetch<CDCResponse>('/v1/cdc?' + params.toString());
     }
 
     /**

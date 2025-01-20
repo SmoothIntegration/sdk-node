@@ -42,7 +42,7 @@ describe('HTTP: fetch', () => {
                 return Promise.reject(new Error('Missing X-Signature Header'));
             }
             const expectedSignature = createHmac('sha256', 'clientSecret');
-            expectedSignature.update(`clientIdGEThttps://api.smooth-integration.com/test2025-01-01T00:00:00.000Z`);
+            expectedSignature.update(`clientIdGEThttps://api.smooth-integration.com/v1/test2025-01-01T00:00:00.000Z`);
             if (signature !== expectedSignature.digest('hex')) {
                 return Promise.reject(new Error('Invalid X-Signature'));
             }
@@ -54,14 +54,14 @@ describe('HTTP: fetch', () => {
             });
         });
         const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
-        const response = await client.http.fetch('/test');
+        const response = await client.http.fetch('/v1/test');
         expect(response).toEqual({ success: true });
     });
 
     test('Generates Correct HMAC for GET with query params', async () => {
         const expectedSignature = createHmac('sha256', 'clientSecret');
         expectedSignature.update(
-            `clientIdGEThttps://api.smooth-integration.com/test?query=param2025-01-01T00:00:00.000Z`,
+            `clientIdGEThttps://api.smooth-integration.com/v1/test?query=param2025-01-01T00:00:00.000Z`,
         );
         const expectedSignatureDigest = expectedSignature.digest('hex');
 
@@ -76,7 +76,7 @@ describe('HTTP: fetch', () => {
             }
         });
         const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
-        const response = await client.http.fetch('/test?query=param');
+        const response = await client.http.fetch('/v1/test?query=param');
         expect(response).toEqual({ success: true });
     });
 
@@ -85,7 +85,9 @@ describe('HTTP: fetch', () => {
         // Note: The body needs to be serialized once, as JSON.stringify does not guarantee a specific ordering of keys when serializing.
         // by serializing once, we ensure the string representation is consistent.
         const body: string = JSON.stringify({ foo: 'bar', baz: 'qux' });
-        expectedSignature.update('clientIdPOSThttps://api.smooth-integration.com/test2025-01-01T00:00:00.000Z' + body);
+        expectedSignature.update(
+            'clientIdPOSThttps://api.smooth-integration.com/v1/test2025-01-01T00:00:00.000Z' + body,
+        );
         const expectedSignatureDigest = expectedSignature.digest('hex');
 
         fetchMock.mockResponseOnce((req) => {
@@ -99,7 +101,7 @@ describe('HTTP: fetch', () => {
             }
         });
         const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
-        const response = await client.http.fetch('/test', {
+        const response = await client.http.fetch('/v1/test', {
             method: 'POST',
             body: body,
         });
@@ -126,7 +128,7 @@ describe('HTTP: fetch', () => {
             });
         });
         const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
-        const response = await client.http.fetch('/test', {
+        const response = await client.http.fetch('/v1/test', {
             headers: {
                 'X-Custom-Header': 'foo',
             },
@@ -139,7 +141,7 @@ describe('HTTP: fetch', () => {
             return Promise.reject(new Error('Network Error'));
         });
         const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
-        await expect(client.http.fetch('/test?query=param')).rejects.toThrow(
+        await expect(client.http.fetch('/v1/test?query=param')).rejects.toThrow(
             expect.objectContaining({
                 name: SIError.name,
                 message: 'Network Error',
@@ -155,7 +157,7 @@ describe('HTTP: fetch', () => {
             });
         });
         const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
-        await expect(client.http.fetch('/test?query=param')).rejects.toThrow(
+        await expect(client.http.fetch('/v1/test?query=param')).rejects.toThrow(
             expect.objectContaining({
                 name: SIError.name,
                 message: 'Invalid JSON Received',

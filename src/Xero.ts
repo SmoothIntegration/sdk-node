@@ -19,12 +19,14 @@ export default class Xero {
     }
 
     public async getConsentUrl(companyId: string): Promise<string> {
-        const response = await this._client.http.fetch<GetConsentUrlResponse>('/xero/connect?company_id=' + companyId);
+        const response = await this._client.http.fetch<GetConsentUrlResponse>(
+            '/v1/xero/connect?company_id=' + companyId,
+        );
         return response.result.consentUrl;
     }
 
     public async startImport(dataSourceId: string): Promise<void> {
-        await this._client.http.fetch<StartImportResponse>('/data/import/' + dataSourceId, {
+        await this._client.http.fetch<StartImportResponse>('/v1/data/import/' + dataSourceId, {
             method: 'POST',
         });
     }
