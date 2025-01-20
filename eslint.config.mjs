@@ -19,4 +19,10 @@ export default [
     pluginJs.configs.recommended,
     ...eslintPluginAstro.configs.recommended,
     ...tseslint.configs.recommended,
+    {
+        files: ['**/*.{js,mjs,cjs,ts,astro}'],
+        rules: {
+            'import/no-useless-path-segments': 'off',
+        },
+    },
 ];

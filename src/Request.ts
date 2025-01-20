@@ -1,4 +1,5 @@
-import Client, { DataSourceId } from '.';
+import Client from './Client';
+import type { DataSourceId } from './types';
 
 export default class Request {
     _client: Client;

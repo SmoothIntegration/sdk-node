@@ -1,6 +1,6 @@
 import { createHmac } from 'node:crypto';
 
-import Client, { SIError } from '.';
+import Client, { SIError } from './index';
 
 export default class HTTP {
     _client: Client;

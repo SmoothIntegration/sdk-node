@@ -1,4 +1,4 @@
-import { CompanyId, DataSourceId, DocumentType, Event, EventId } from '.';
+import { CompanyId, DataSourceId, DocumentType, Event, EventId } from './index';
 
 export type Structure = 'domain' | 'normalised' | 'raw';
 

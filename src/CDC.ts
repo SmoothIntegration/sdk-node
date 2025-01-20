@@ -1,4 +1,4 @@
-import Client, { CDCConfig, CDCResponse, CDCStreamConfig } from '.';
+import Client, { CDCConfig, CDCResponse, CDCStreamConfig } from './index';
 
 const POLL_INTERVAL_MS = 5000;
 

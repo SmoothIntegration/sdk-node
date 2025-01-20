@@ -1,4 +1,4 @@
-import Client from '.';
+import Client from './Client';
 
 type GetConsentUrlResponse = {
     message: string;
