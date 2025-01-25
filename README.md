@@ -76,8 +76,8 @@ console.log(events);
 import Client, { CDCConfig, Event } from '@smooth-integration/sdk-node';
 
 const client: Client = new Client({
-    id: '<your_client_id>',
-    secret: '<your_client_secret>',
+    clientId: '<your_client_id>',
+    clientSecret: '<your_client_secret>',
 });
 
 const logEvents = async () => {

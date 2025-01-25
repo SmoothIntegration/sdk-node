@@ -5,7 +5,7 @@ import MYOB from './MYOB';
 import QuickBooks from './QuickBooks';
 import Request from './Request';
 import Xero from './Xero';
-import { ClientConfig } from './types/Client';
+import type { ClientConfig } from './types';
 
 /**
  * The main client class that provides access to all the Smooth Integration APIs.

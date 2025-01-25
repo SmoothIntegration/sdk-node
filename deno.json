@@ -1,6 +1,6 @@
 {
     "name": "@smooth-integration/sdk-node",
-    "version": "0.2.14",
+    "version": "0.3.0",
     "license": "MIT",
     "exports": "./src/index.ts"
 }
