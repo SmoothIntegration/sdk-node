@@ -27,8 +27,8 @@ export default class QuickBooks {
         return response.result.consentUrl;
     }
 
-    public async startImport(dataSourceId: string): Promise<void> {
-        await this._client.http.fetch<StartImportResponse>('/v1/data/import/' + dataSourceId, {
+    public async startImport(connectionId: string): Promise<void> {
+        await this._client.http.fetch<StartImportResponse>('/v1/data/import/' + connectionId, {
             method: 'POST',
         });
     }

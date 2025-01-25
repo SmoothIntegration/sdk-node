@@ -1,4 +1,4 @@
-import { CompanyId, DataSourceId, DocumentId, DocumentStatus, MetaDocumentType, MetaEventDocument } from './index';
+import { CompanyId, ConnectionId, DocumentId, DocumentStatus, MetaDocumentType, MetaEventDocument } from './index';
 
 /**
  * Unique identifier for events. This is a 64-bit signed int represented as a string.
@@ -14,7 +14,7 @@ export type EventId = string;
 export type MetaEvent = {
     event_id: EventId;
     company_id: CompanyId;
-    data_source_id: DataSourceId;
+    connection_id: ConnectionId;
     document_id: undefined;
     document_type: MetaDocumentType;
     document_status: undefined;
@@ -27,7 +27,7 @@ export type MetaEvent = {
 export type DocumentEvent = {
     event_id: EventId;
     company_id: CompanyId;
-    data_source_id: DataSourceId;
+    connection_id: ConnectionId;
     document_id: DocumentId;
     document_type: DocumentType;
     document_status: DocumentStatus;

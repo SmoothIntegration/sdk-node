@@ -23,8 +23,8 @@ export default class CDC {
         if (config.company) {
             params.append('company', config.company);
         }
-        if (config.data_source) {
-            params.append('data_source', config.data_source);
+        if (config.connection) {
+            params.append('connection', config.connection);
         }
         if (config.meta) {
             params.append('meta', config.meta);

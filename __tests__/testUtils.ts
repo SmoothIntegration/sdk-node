@@ -4,7 +4,7 @@ import { createHmac } from 'node:crypto';
 export const TEST_CLIENT_ID = 'clientId';
 export const TEST_CLIENT_SECRET = 'clientSecret';
 export const TEST_COMPANY_ID = 'a5c8d02c-f8dd-45ee-9495-53c1781501b7';
-export const TEST_DATASOURCE_ID = '0730d67d-7d48-4a3a-8a72-04c0a4666fd0';
+export const TEST_CONNECTION_ID = '0730d67d-7d48-4a3a-8a72-04c0a4666fd0';
 
 type FetchMock = {
     request: {

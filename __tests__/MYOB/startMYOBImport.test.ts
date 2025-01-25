@@ -1,5 +1,5 @@
 import SIClient, { SIError } from '../../src';
-import { TEST_CLIENT_ID, TEST_CLIENT_SECRET, TEST_DATASOURCE_ID, mockFetch } from '../testUtils';
+import { TEST_CLIENT_ID, TEST_CLIENT_SECRET, TEST_CONNECTION_ID, mockFetch } from '../testUtils';
 
 describe('MYOB: startImport', () => {
     test('Returns void on 200 Response', async () => {
@@ -15,7 +15,7 @@ describe('MYOB: startImport', () => {
         });
 
         const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
-        await client.myob.startImport(TEST_DATASOURCE_ID);
+        await client.myob.startImport(TEST_CONNECTION_ID);
     });
 
     test('Raises SIError: Bad Request on 400 Response', async () => {
@@ -26,15 +26,15 @@ describe('MYOB: startImport', () => {
             },
             response: {
                 status: 400,
-                body: JSON.stringify({ message: 'Invalid DataSource ID' }),
+                body: JSON.stringify({ message: 'Invalid Connection ID' }),
             },
         });
 
         const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
-        await expect(client.myob.startImport(TEST_DATASOURCE_ID)).rejects.toThrow(
+        await expect(client.myob.startImport(TEST_CONNECTION_ID)).rejects.toThrow(
             expect.objectContaining({
                 name: SIError.name,
-                message: 'Bad Request: Invalid DataSource ID',
+                message: 'Bad Request: Invalid Connection ID',
             }),
         );
     });
@@ -52,7 +52,7 @@ describe('MYOB: startImport', () => {
         });
 
         const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
-        await expect(client.myob.startImport(TEST_DATASOURCE_ID)).rejects.toThrow(
+        await expect(client.myob.startImport(TEST_CONNECTION_ID)).rejects.toThrow(
             expect.objectContaining({
                 name: SIError.name,
                 message: "Unauthorized: Invalid 'X-Organisation' header",
@@ -73,7 +73,7 @@ describe('MYOB: startImport', () => {
         });
 
         const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
-        await expect(client.myob.startImport(TEST_DATASOURCE_ID)).rejects.toThrow(
+        await expect(client.myob.startImport(TEST_CONNECTION_ID)).rejects.toThrow(
             expect.objectContaining({
                 name: SIError.name,
                 message: 'Internal Server Error',

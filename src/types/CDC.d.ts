@@ -1,4 +1,4 @@
-import { CompanyId, DataSourceId, DocumentType, Event, EventId } from './index';
+import { CompanyId, ConnectionId, DocumentType, Event, EventId } from './index';
 
 export type Structure = 'domain' | 'normalised' | 'raw';
 
@@ -45,7 +45,7 @@ export type CDCConfig = {
      * Only retrieve events from a specific data source by its ID.
      * If omitted, events from all data sources are included.
      */
-    data_source?: DataSourceId;
+    connection?: ConnectionId;
 
     /**
      * Whether to include or exclude meta events or not.

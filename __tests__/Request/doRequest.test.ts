@@ -1,5 +1,5 @@
 import SIClient from '../../src';
-import { TEST_CLIENT_ID, TEST_CLIENT_SECRET, TEST_DATASOURCE_ID, mockFetch } from '../testUtils';
+import { TEST_CLIENT_ID, TEST_CLIENT_SECRET, TEST_CONNECTION_ID, mockFetch } from '../testUtils';
 
 jest.useFakeTimers().setSystemTime(new Date('2025-01-01T00:00:00.000Z'));
 
@@ -22,7 +22,7 @@ describe('Request: do request', () => {
         });
 
         const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
-        const response = await client.request.get(TEST_DATASOURCE_ID, '/tests/test');
+        const response = await client.request.get(TEST_CONNECTION_ID, '/tests/test');
         expect(response).toEqual({ message: 'success' });
     });
 
@@ -47,7 +47,7 @@ describe('Request: do request', () => {
         });
 
         const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
-        const response = await client.request.get(TEST_DATASOURCE_ID, '/tests/test', {
+        const response = await client.request.get(TEST_CONNECTION_ID, '/tests/test', {
             headers: {
                 'X-Idempotency-Key': '1234',
             },
@@ -73,7 +73,7 @@ describe('Request: do request', () => {
         });
 
         const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
-        const response = await client.request.post(TEST_DATASOURCE_ID, '/tests/test');
+        const response = await client.request.post(TEST_CONNECTION_ID, '/tests/test');
         expect(response).toEqual({ message: 'success' });
     });
 
@@ -97,7 +97,7 @@ describe('Request: do request', () => {
         });
 
         const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
-        const response = await client.request.post(TEST_DATASOURCE_ID, '/tests/test', {
+        const response = await client.request.post(TEST_CONNECTION_ID, '/tests/test', {
             body: '{"request":"body"}',
         });
         expect(response).toEqual({ message: 'success' });
@@ -125,7 +125,7 @@ describe('Request: do request', () => {
         });
 
         const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
-        const response = await client.request.post(TEST_DATASOURCE_ID, '/tests/test', {
+        const response = await client.request.post(TEST_CONNECTION_ID, '/tests/test', {
             body: '{"request":"body"}',
             headers: {
                 'X-Idempotency-Key': '1234',
@@ -152,7 +152,7 @@ describe('Request: do request', () => {
         });
 
         const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
-        const response = await client.request.put(TEST_DATASOURCE_ID, '/tests/test');
+        const response = await client.request.put(TEST_CONNECTION_ID, '/tests/test');
         expect(response).toEqual({ message: 'success' });
     });
 
@@ -176,7 +176,7 @@ describe('Request: do request', () => {
         });
 
         const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
-        const response = await client.request.put(TEST_DATASOURCE_ID, '/tests/test', {
+        const response = await client.request.put(TEST_CONNECTION_ID, '/tests/test', {
             body: '{"request":"body"}',
         });
         expect(response).toEqual({ message: 'success' });
@@ -205,7 +205,7 @@ describe('Request: do request', () => {
         });
 
         const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
-        const response = await client.request.put(TEST_DATASOURCE_ID, '/tests/test', {
+        const response = await client.request.put(TEST_CONNECTION_ID, '/tests/test', {
             body: '{"request":"body"}',
             headers: {
                 'X-Idempotency-Key': '1234',
@@ -232,7 +232,7 @@ describe('Request: do request', () => {
         });
 
         const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
-        const response = await client.request.patch(TEST_DATASOURCE_ID, '/tests/test');
+        const response = await client.request.patch(TEST_CONNECTION_ID, '/tests/test');
         expect(response).toEqual({ message: 'success' });
     });
 
@@ -256,7 +256,7 @@ describe('Request: do request', () => {
         });
 
         const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
-        const response = await client.request.patch(TEST_DATASOURCE_ID, '/tests/test', {
+        const response = await client.request.patch(TEST_CONNECTION_ID, '/tests/test', {
             body: '{"request":"body"}',
         });
         expect(response).toEqual({ message: 'success' });
@@ -285,7 +285,7 @@ describe('Request: do request', () => {
         });
 
         const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
-        const response = await client.request.patch(TEST_DATASOURCE_ID, '/tests/test', {
+        const response = await client.request.patch(TEST_CONNECTION_ID, '/tests/test', {
             body: '{"request":"body"}',
             headers: {
                 'X-Idempotency-Key': '1234',
@@ -312,7 +312,7 @@ describe('Request: do request', () => {
         });
 
         const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
-        const response = await client.request.delete(TEST_DATASOURCE_ID, '/tests/test');
+        const response = await client.request.delete(TEST_CONNECTION_ID, '/tests/test');
         expect(response).toEqual({ message: 'success' });
     });
 
@@ -336,7 +336,7 @@ describe('Request: do request', () => {
         });
 
         const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
-        const response = await client.request.delete(TEST_DATASOURCE_ID, '/tests/test', {
+        const response = await client.request.delete(TEST_CONNECTION_ID, '/tests/test', {
             body: '{"request":"body"}',
         });
         expect(response).toEqual({ message: 'success' });
@@ -363,7 +363,7 @@ describe('Request: do request', () => {
         });
 
         const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
-        const response = await client.request.delete(TEST_DATASOURCE_ID, '/tests/test', {
+        const response = await client.request.delete(TEST_CONNECTION_ID, '/tests/test', {
             headers: {
                 'X-Idempotency-Key': '1234',
             },

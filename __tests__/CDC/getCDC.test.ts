@@ -6,7 +6,7 @@ const SUCCESS_RESPONSE_BODY = {
     events: [
         {
             company_id: 'a5c8d02c-f8dd-45ee-9495-53c1781501b7',
-            data_source_id: '0730d67d-7d48-4a3a-8a72-04c0a4666fd0',
+            connection_id: '0730d67d-7d48-4a3a-8a72-04c0a4666fd0',
             event_id: '123456789012345678',
             document_id: 'efeeb0a2-e59b-4e17-bc9d-07dab01d17ca',
             document_type: 'xero.account',
@@ -48,7 +48,7 @@ describe('CDC: get', () => {
                     '&limit=678' +
                     '&document_type=xero.invoice%2Cquickbooks.balances' +
                     '&company=a5c8d02c-f8dd-45ee-9495-53c1781501b7' +
-                    '&data_source=0730d67d-7d48-4a3a-8a72-04c0a4666fd0' +
+                    '&connection=0730d67d-7d48-4a3a-8a72-04c0a4666fd0' +
                     '&meta=include',
             },
             response: {
@@ -64,7 +64,7 @@ describe('CDC: get', () => {
             limit: 678,
             document_type: ['xero.invoice', 'quickbooks.balances'],
             company: 'a5c8d02c-f8dd-45ee-9495-53c1781501b7',
-            data_source: '0730d67d-7d48-4a3a-8a72-04c0a4666fd0',
+            connection: '0730d67d-7d48-4a3a-8a72-04c0a4666fd0',
             meta: 'include',
         });
         expect(response).toEqual(SUCCESS_RESPONSE_BODY);

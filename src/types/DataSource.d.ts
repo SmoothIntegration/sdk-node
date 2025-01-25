@@ -1,3 +1,3 @@
 import { Id } from './index';
 
-export type DataSourceId = Id;
+export type ConnectionId = Id;
