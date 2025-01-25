@@ -40,7 +40,10 @@ The package needs to be configured with your client id and client secret, which 
 available in the [SmoothIntegration Dashboard](https://app.smooth-integration.com/secrets). Require it with values:
 
 ```js
-const client = require('@smooth-integration/sdk-node')('<your_client_id>', '<your_client_secret>');
+const client = require('@smooth-integration/sdk-node')({
+    clientId: '<your_client_id>',
+    clientSecret: '<your_client_secret>',
+});
 
 client.cdc
     .get({
@@ -55,7 +58,10 @@ Or using ES modules and `async`/`await`:
 ```js
 import Client from '@smooth-integration/sdk-node';
 
-const client = new Client('<your_client_id>', '<your_client_secret>');
+const client = new Client({
+    clientId: '<your_client_id>',
+    clientSecret: '<your_client_secret>',
+});
 
 const events = await client.cdc.get({
     structure: 'normalised',
@@ -69,7 +75,10 @@ console.log(events);
 ```ts
 import Client, { CDCConfig, Event } from '@smooth-integration/sdk-node';
 
-const client: Client = new Client('<your_client_id>', '<your_client_secret>');
+const client: Client = new Client({
+    id: '<your_client_id>',
+    secret: '<your_client_secret>',
+});
 
 const logEvents = async () => {
     const config: CDCConfig = {
@@ -97,7 +106,10 @@ polling using `client.cdc.get` yourself.
 ```ts
 import Client, { Event } from '@smooth-integration/sdk-node';
 
-const client: Client = new Client('<your_client_id>', '<your_client_secret>');
+const client: Client = new Client({
+    clientId: '<your_client_id>',
+    clientSecret: '<your_client_secret>',
+});
 
 const onEvent = async (event: Event): Promise<void> => {
     console.log('Received event', event.event_id, event.document_id, event);

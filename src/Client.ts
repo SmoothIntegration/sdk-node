@@ -5,6 +5,7 @@ import MYOB from './MYOB';
 import QuickBooks from './QuickBooks';
 import Request from './Request';
 import Xero from './Xero';
+import { ClientConfig } from './types/Client';
 
 /**
  * The main client class that provides access to all the Smooth Integration APIs.
@@ -26,14 +27,13 @@ export default class Client {
 
     /**
      * Create a new Smooth Integration client.
-     * @param clientId { string } - The client ID for your Smooth Integration account. Find it at https://app.smooth-integration.com/secrets
-     * @param clientSecret { string } - The client secret for your Smooth Integration account. Find it at https://app.smooth-integration.com/secrets
-     * @param apiUrl Do Not Use. This is for internal testing use only and will be removed soon.
      */
-    constructor(clientId: string, clientSecret: string, apiUrl: string = 'https://api.smooth-integration.com') {
-        this.clientId = clientId;
-        this.clientSecret = clientSecret;
-        this.apiUrl = apiUrl;
+    constructor(config: ClientConfig) {
+        this.clientId = config.clientId;
+        this.clientSecret = config.clientSecret;
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore: Only for debugging purposes, will be deleted without any warning in the near future. Do not use!
+        this.apiUrl = config.apiUrl || 'https://api.smooth-integration.com';
 
         this.http = new HTTP(this);
 

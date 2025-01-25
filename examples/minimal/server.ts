@@ -5,8 +5,11 @@ import Client, { Event } from '@smooth-integration/sdk-node';
 // Create an express server, can be any server
 const app = express();
 
-// Create a SmoothIntegration client, make sure read the API key from a safe place like a .env file
-const client: Client = new Client('<your_client_id>', '<your_client_secret>');
+// Create a SmoothIntegration client, make sure read the client secret from a safe place like a .env file
+const client: Client = new Client({
+    clientId: '<your_client_id>',
+    clientSecret: '<your_client_secret>',
+});
 
 // Replace with the companyId you registered for this user on SmoothIntegration
 const demoCompanyId = '<your_company_id>';

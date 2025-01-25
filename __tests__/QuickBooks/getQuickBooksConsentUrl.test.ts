@@ -19,7 +19,10 @@ describe('QuickBooks: getConsentUrl', () => {
             },
         });
 
-        const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
+        const client = new SIClient({
+            clientId: TEST_CLIENT_ID,
+            clientSecret: TEST_CLIENT_SECRET,
+        });
         const response = await client.quickBooks.getConsentUrl(TEST_COMPANY_ID);
         expect(response).toBe('the-consent-url');
     });
@@ -41,7 +44,10 @@ describe('QuickBooks: getConsentUrl', () => {
             },
         });
 
-        const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
+        const client = new SIClient({
+            clientId: TEST_CLIENT_ID,
+            clientSecret: TEST_CLIENT_SECRET,
+        });
         const response = await client.quickBooks.getConsentUrl(TEST_COMPANY_ID, true);
         expect(response).toBe('the-consent-url');
     });
@@ -58,7 +64,10 @@ describe('QuickBooks: getConsentUrl', () => {
             },
         });
 
-        const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
+        const client = new SIClient({
+            clientId: TEST_CLIENT_ID,
+            clientSecret: TEST_CLIENT_SECRET,
+        });
         await expect(client.quickBooks.getConsentUrl(TEST_COMPANY_ID)).rejects.toThrow(
             expect.objectContaining({
                 name: SIError.name,
@@ -79,7 +88,10 @@ describe('QuickBooks: getConsentUrl', () => {
             },
         });
 
-        const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
+        const client = new SIClient({
+            clientId: TEST_CLIENT_ID,
+            clientSecret: TEST_CLIENT_SECRET,
+        });
         await expect(client.quickBooks.getConsentUrl('invalid-company-id')).rejects.toThrow(
             expect.objectContaining({
                 name: SIError.name,
@@ -100,7 +112,10 @@ describe('QuickBooks: getConsentUrl', () => {
             },
         });
 
-        const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
+        const client = new SIClient({
+            clientId: TEST_CLIENT_ID,
+            clientSecret: TEST_CLIENT_SECRET,
+        });
         await expect(client.quickBooks.getConsentUrl(TEST_COMPANY_ID)).rejects.toThrow(
             expect.objectContaining({
                 name: SIError.name,

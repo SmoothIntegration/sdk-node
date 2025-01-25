@@ -19,7 +19,10 @@ describe('Xero: getConsentUrl', () => {
             },
         });
 
-        const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
+        const client = new SIClient({
+            clientId: TEST_CLIENT_ID,
+            clientSecret: TEST_CLIENT_SECRET,
+        });
         const response = await client.xero.getConsentUrl(TEST_COMPANY_ID);
         expect(response).toBe('the-consent-url');
     });
@@ -36,7 +39,10 @@ describe('Xero: getConsentUrl', () => {
             },
         });
 
-        const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
+        const client = new SIClient({
+            clientId: TEST_CLIENT_ID,
+            clientSecret: TEST_CLIENT_SECRET,
+        });
         await expect(client.xero.getConsentUrl(TEST_COMPANY_ID)).rejects.toThrow(
             expect.objectContaining({
                 name: SIError.name,
@@ -57,7 +63,10 @@ describe('Xero: getConsentUrl', () => {
             },
         });
 
-        const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
+        const client = new SIClient({
+            clientId: TEST_CLIENT_ID,
+            clientSecret: TEST_CLIENT_SECRET,
+        });
         await expect(client.xero.getConsentUrl('invalid-company-id')).rejects.toThrow(
             expect.objectContaining({
                 name: SIError.name,
@@ -78,7 +87,10 @@ describe('Xero: getConsentUrl', () => {
             },
         });
 
-        const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
+        const client = new SIClient({
+            clientId: TEST_CLIENT_ID,
+            clientSecret: TEST_CLIENT_SECRET,
+        });
         await expect(client.xero.getConsentUrl(TEST_COMPANY_ID)).rejects.toThrow(
             expect.objectContaining({
                 name: SIError.name,

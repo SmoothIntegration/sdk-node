@@ -21,7 +21,10 @@ describe('Request: do request', () => {
             },
         });
 
-        const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
+        const client = new SIClient({
+            clientId: TEST_CLIENT_ID,
+            clientSecret: TEST_CLIENT_SECRET,
+        });
         const response = await client.request.get(TEST_CONNECTION_ID, '/tests/test');
         expect(response).toEqual({ message: 'success' });
     });
@@ -46,7 +49,10 @@ describe('Request: do request', () => {
             },
         });
 
-        const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
+        const client = new SIClient({
+            clientId: TEST_CLIENT_ID,
+            clientSecret: TEST_CLIENT_SECRET,
+        });
         const response = await client.request.get(TEST_CONNECTION_ID, '/tests/test', {
             headers: {
                 'X-Idempotency-Key': '1234',
@@ -72,7 +78,10 @@ describe('Request: do request', () => {
             },
         });
 
-        const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
+        const client = new SIClient({
+            clientId: TEST_CLIENT_ID,
+            clientSecret: TEST_CLIENT_SECRET,
+        });
         const response = await client.request.post(TEST_CONNECTION_ID, '/tests/test');
         expect(response).toEqual({ message: 'success' });
     });
@@ -96,7 +105,10 @@ describe('Request: do request', () => {
             },
         });
 
-        const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
+        const client = new SIClient({
+            clientId: TEST_CLIENT_ID,
+            clientSecret: TEST_CLIENT_SECRET,
+        });
         const response = await client.request.post(TEST_CONNECTION_ID, '/tests/test', {
             body: '{"request":"body"}',
         });
@@ -124,7 +136,10 @@ describe('Request: do request', () => {
             },
         });
 
-        const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
+        const client = new SIClient({
+            clientId: TEST_CLIENT_ID,
+            clientSecret: TEST_CLIENT_SECRET,
+        });
         const response = await client.request.post(TEST_CONNECTION_ID, '/tests/test', {
             body: '{"request":"body"}',
             headers: {
@@ -151,7 +166,10 @@ describe('Request: do request', () => {
             },
         });
 
-        const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
+        const client = new SIClient({
+            clientId: TEST_CLIENT_ID,
+            clientSecret: TEST_CLIENT_SECRET,
+        });
         const response = await client.request.put(TEST_CONNECTION_ID, '/tests/test');
         expect(response).toEqual({ message: 'success' });
     });
@@ -175,7 +193,10 @@ describe('Request: do request', () => {
             },
         });
 
-        const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
+        const client = new SIClient({
+            clientId: TEST_CLIENT_ID,
+            clientSecret: TEST_CLIENT_SECRET,
+        });
         const response = await client.request.put(TEST_CONNECTION_ID, '/tests/test', {
             body: '{"request":"body"}',
         });
@@ -204,7 +225,10 @@ describe('Request: do request', () => {
             },
         });
 
-        const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
+        const client = new SIClient({
+            clientId: TEST_CLIENT_ID,
+            clientSecret: TEST_CLIENT_SECRET,
+        });
         const response = await client.request.put(TEST_CONNECTION_ID, '/tests/test', {
             body: '{"request":"body"}',
             headers: {
@@ -231,7 +255,10 @@ describe('Request: do request', () => {
             },
         });
 
-        const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
+        const client = new SIClient({
+            clientId: TEST_CLIENT_ID,
+            clientSecret: TEST_CLIENT_SECRET,
+        });
         const response = await client.request.patch(TEST_CONNECTION_ID, '/tests/test');
         expect(response).toEqual({ message: 'success' });
     });
@@ -255,7 +282,10 @@ describe('Request: do request', () => {
             },
         });
 
-        const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
+        const client = new SIClient({
+            clientId: TEST_CLIENT_ID,
+            clientSecret: TEST_CLIENT_SECRET,
+        });
         const response = await client.request.patch(TEST_CONNECTION_ID, '/tests/test', {
             body: '{"request":"body"}',
         });
@@ -284,7 +314,10 @@ describe('Request: do request', () => {
             },
         });
 
-        const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
+        const client = new SIClient({
+            clientId: TEST_CLIENT_ID,
+            clientSecret: TEST_CLIENT_SECRET,
+        });
         const response = await client.request.patch(TEST_CONNECTION_ID, '/tests/test', {
             body: '{"request":"body"}',
             headers: {
@@ -311,7 +344,10 @@ describe('Request: do request', () => {
             },
         });
 
-        const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
+        const client = new SIClient({
+            clientId: TEST_CLIENT_ID,
+            clientSecret: TEST_CLIENT_SECRET,
+        });
         const response = await client.request.delete(TEST_CONNECTION_ID, '/tests/test');
         expect(response).toEqual({ message: 'success' });
     });
@@ -335,7 +371,10 @@ describe('Request: do request', () => {
             },
         });
 
-        const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
+        const client = new SIClient({
+            clientId: TEST_CLIENT_ID,
+            clientSecret: TEST_CLIENT_SECRET,
+        });
         const response = await client.request.delete(TEST_CONNECTION_ID, '/tests/test', {
             body: '{"request":"body"}',
         });
@@ -362,7 +401,10 @@ describe('Request: do request', () => {
             },
         });
 
-        const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
+        const client = new SIClient({
+            clientId: TEST_CLIENT_ID,
+            clientSecret: TEST_CLIENT_SECRET,
+        });
         const response = await client.request.delete(TEST_CONNECTION_ID, '/tests/test', {
             headers: {
                 'X-Idempotency-Key': '1234',

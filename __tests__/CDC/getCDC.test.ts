@@ -29,7 +29,10 @@ describe('CDC: get', () => {
             },
         });
 
-        const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
+        const client = new SIClient({
+            clientId: TEST_CLIENT_ID,
+            clientSecret: TEST_CLIENT_SECRET,
+        });
         const response = await client.cdc.get({
             structure: 'raw',
         });
@@ -57,7 +60,10 @@ describe('CDC: get', () => {
             },
         });
 
-        const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
+        const client = new SIClient({
+            clientId: TEST_CLIENT_ID,
+            clientSecret: TEST_CLIENT_SECRET,
+        });
         const response = await client.cdc.get({
             structure: 'raw',
             from: '123456789012345678',

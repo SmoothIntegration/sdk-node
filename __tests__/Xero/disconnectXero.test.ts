@@ -1,7 +1,7 @@
 import SIClient, { SIError } from '../../src';
 import { TEST_CLIENT_ID, TEST_CLIENT_SECRET, TEST_CONNECTION_ID, mockFetch } from '../testUtils';
 
-describe('MYOB: startImport', () => {
+describe('Xero: disconnect', () => {
     test('Returns void on 200 Response', async () => {
         mockFetch({
             request: {
@@ -18,7 +18,7 @@ describe('MYOB: startImport', () => {
             clientId: TEST_CLIENT_ID,
             clientSecret: TEST_CLIENT_SECRET,
         });
-        await client.myob.startImport(TEST_CONNECTION_ID);
+        await client.xero.startImport(TEST_CONNECTION_ID);
     });
 
     test('Raises SIError: Bad Request on 400 Response', async () => {
@@ -37,7 +37,7 @@ describe('MYOB: startImport', () => {
             clientId: TEST_CLIENT_ID,
             clientSecret: TEST_CLIENT_SECRET,
         });
-        await expect(client.myob.startImport(TEST_CONNECTION_ID)).rejects.toThrow(
+        await expect(client.xero.startImport(TEST_CONNECTION_ID)).rejects.toThrow(
             expect.objectContaining({
                 name: SIError.name,
                 message: 'Bad Request: Invalid Connection ID',
@@ -61,7 +61,7 @@ describe('MYOB: startImport', () => {
             clientId: TEST_CLIENT_ID,
             clientSecret: TEST_CLIENT_SECRET,
         });
-        await expect(client.myob.startImport(TEST_CONNECTION_ID)).rejects.toThrow(
+        await expect(client.xero.startImport(TEST_CONNECTION_ID)).rejects.toThrow(
             expect.objectContaining({
                 name: SIError.name,
                 message: "Unauthorized: Invalid 'X-Organisation' header",
@@ -85,7 +85,7 @@ describe('MYOB: startImport', () => {
             clientId: TEST_CLIENT_ID,
             clientSecret: TEST_CLIENT_SECRET,
         });
-        await expect(client.myob.startImport(TEST_CONNECTION_ID)).rejects.toThrow(
+        await expect(client.xero.startImport(TEST_CONNECTION_ID)).rejects.toThrow(
             expect.objectContaining({
                 name: SIError.name,
                 message: 'Internal Server Error',

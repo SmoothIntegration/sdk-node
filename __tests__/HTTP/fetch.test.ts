@@ -53,7 +53,10 @@ describe('HTTP: fetch', () => {
                 status: 200,
             });
         });
-        const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
+        const client = new SIClient({
+            clientId: TEST_CLIENT_ID,
+            clientSecret: TEST_CLIENT_SECRET,
+        });
         const response = await client.http.fetch('/v1/test');
         expect(response).toEqual({ success: true });
     });
@@ -75,7 +78,10 @@ describe('HTTP: fetch', () => {
                 });
             }
         });
-        const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
+        const client = new SIClient({
+            clientId: TEST_CLIENT_ID,
+            clientSecret: TEST_CLIENT_SECRET,
+        });
         const response = await client.http.fetch('/v1/test?query=param');
         expect(response).toEqual({ success: true });
     });
@@ -100,7 +106,10 @@ describe('HTTP: fetch', () => {
                 });
             }
         });
-        const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
+        const client = new SIClient({
+            clientId: TEST_CLIENT_ID,
+            clientSecret: TEST_CLIENT_SECRET,
+        });
         const response = await client.http.fetch('/v1/test', {
             method: 'POST',
             body: body,
@@ -127,7 +136,10 @@ describe('HTTP: fetch', () => {
                 status: 200,
             });
         });
-        const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
+        const client = new SIClient({
+            clientId: TEST_CLIENT_ID,
+            clientSecret: TEST_CLIENT_SECRET,
+        });
         const response = await client.http.fetch('/v1/test', {
             headers: {
                 'X-Custom-Header': 'foo',
@@ -140,7 +152,10 @@ describe('HTTP: fetch', () => {
         fetchMock.mockResponseOnce(() => {
             return Promise.reject(new Error('Network Error'));
         });
-        const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
+        const client = new SIClient({
+            clientId: TEST_CLIENT_ID,
+            clientSecret: TEST_CLIENT_SECRET,
+        });
         await expect(client.http.fetch('/v1/test?query=param')).rejects.toThrow(
             expect.objectContaining({
                 name: SIError.name,
@@ -156,7 +171,10 @@ describe('HTTP: fetch', () => {
                 status: 200,
             });
         });
-        const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
+        const client = new SIClient({
+            clientId: TEST_CLIENT_ID,
+            clientSecret: TEST_CLIENT_SECRET,
+        });
         await expect(client.http.fetch('/v1/test?query=param')).rejects.toThrow(
             expect.objectContaining({
                 name: SIError.name,

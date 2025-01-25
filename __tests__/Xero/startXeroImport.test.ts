@@ -14,7 +14,10 @@ describe('Xero: startImport', () => {
             },
         });
 
-        const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
+        const client = new SIClient({
+            clientId: TEST_CLIENT_ID,
+            clientSecret: TEST_CLIENT_SECRET,
+        });
         await client.xero.startImport(TEST_CONNECTION_ID);
     });
 
@@ -30,7 +33,10 @@ describe('Xero: startImport', () => {
             },
         });
 
-        const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
+        const client = new SIClient({
+            clientId: TEST_CLIENT_ID,
+            clientSecret: TEST_CLIENT_SECRET,
+        });
         await expect(client.xero.startImport(TEST_CONNECTION_ID)).rejects.toThrow(
             expect.objectContaining({
                 name: SIError.name,
@@ -51,7 +57,10 @@ describe('Xero: startImport', () => {
             },
         });
 
-        const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
+        const client = new SIClient({
+            clientId: TEST_CLIENT_ID,
+            clientSecret: TEST_CLIENT_SECRET,
+        });
         await expect(client.xero.startImport(TEST_CONNECTION_ID)).rejects.toThrow(
             expect.objectContaining({
                 name: SIError.name,
@@ -72,7 +81,10 @@ describe('Xero: startImport', () => {
             },
         });
 
-        const client = new SIClient(TEST_CLIENT_ID, TEST_CLIENT_SECRET);
+        const client = new SIClient({
+            clientId: TEST_CLIENT_ID,
+            clientSecret: TEST_CLIENT_SECRET,
+        });
         await expect(client.xero.startImport(TEST_CONNECTION_ID)).rejects.toThrow(
             expect.objectContaining({
                 name: SIError.name,
