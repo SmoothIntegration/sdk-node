@@ -41,8 +41,10 @@ describe('HTTP: fetch', () => {
             if (!signature) {
                 return Promise.reject(new Error('Missing X-Signature Header'));
             }
-            const expectedSignature = createHmac('sha256', 'clientSecret');
-            expectedSignature.update(`clientIdGEThttps://api.smooth-integration.com/v1/test2025-01-01T00:00:00.000Z`);
+            const expectedSignature = createHmac('sha256', TEST_CLIENT_SECRET);
+            expectedSignature.update(
+                `5f95d989-8da6-4dfc-9cf6-35e873c75d36GEThttps://api.smooth-integration.com/v1/test2025-01-01T00:00:00.000Z`,
+            );
             if (signature !== expectedSignature.digest('hex')) {
                 return Promise.reject(new Error('Invalid X-Signature'));
             }
@@ -62,9 +64,9 @@ describe('HTTP: fetch', () => {
     });
 
     test('Generates Correct HMAC for GET with query params', async () => {
-        const expectedSignature = createHmac('sha256', 'clientSecret');
+        const expectedSignature = createHmac('sha256', TEST_CLIENT_SECRET);
         expectedSignature.update(
-            `clientIdGEThttps://api.smooth-integration.com/v1/test?query=param2025-01-01T00:00:00.000Z`,
+            `5f95d989-8da6-4dfc-9cf6-35e873c75d36GEThttps://api.smooth-integration.com/v1/test?query=param2025-01-01T00:00:00.000Z`,
         );
         const expectedSignatureDigest = expectedSignature.digest('hex');
 
@@ -87,12 +89,13 @@ describe('HTTP: fetch', () => {
     });
 
     test('Generates Correct HMAC for POST with body', async () => {
-        const expectedSignature = createHmac('sha256', 'clientSecret');
+        const expectedSignature = createHmac('sha256', TEST_CLIENT_SECRET);
         // Note: The body needs to be serialized once, as JSON.stringify does not guarantee a specific ordering of keys when serializing.
         // by serializing once, we ensure the string representation is consistent.
         const body: string = JSON.stringify({ foo: 'bar', baz: 'qux' });
         expectedSignature.update(
-            'clientIdPOSThttps://api.smooth-integration.com/v1/test2025-01-01T00:00:00.000Z' + body,
+            '5f95d989-8da6-4dfc-9cf6-35e873c75d36POSThttps://api.smooth-integration.com/v1/test2025-01-01T00:00:00.000Z' +
+                body,
         );
         const expectedSignatureDigest = expectedSignature.digest('hex');
 

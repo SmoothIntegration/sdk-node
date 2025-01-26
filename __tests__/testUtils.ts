@@ -1,8 +1,8 @@
 import fetchMock, { MockResponseInit } from 'jest-fetch-mock';
 import { createHmac } from 'node:crypto';
 
-export const TEST_CLIENT_ID = 'clientId';
-export const TEST_CLIENT_SECRET = 'clientSecret';
+export const TEST_CLIENT_ID = '5f95d989-8da6-4dfc-9cf6-35e873c75d36';
+export const TEST_CLIENT_SECRET = 'O5B5r_KEKs9UTIvpfaeNPpwfwXcNkvIH2vv1X74IzTU';
 export const TEST_COMPANY_ID = 'a5c8d02c-f8dd-45ee-9495-53c1781501b7';
 export const TEST_CONNECTION_ID = '0730d67d-7d48-4a3a-8a72-04c0a4666fd0';
 

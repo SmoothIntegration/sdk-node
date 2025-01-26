@@ -10,7 +10,7 @@ describe('Request: do request', () => {
                 method: 'GET',
                 url: 'https://api.smooth-integration.com/v1/request/0730d67d-7d48-4a3a-8a72-04c0a4666fd0/tests/test',
                 hmacPayload:
-                    'clientId' +
+                    '5f95d989-8da6-4dfc-9cf6-35e873c75d36' +
                     'GET' +
                     'https://api.smooth-integration.com/v1/request/0730d67d-7d48-4a3a-8a72-04c0a4666fd0/tests/test' +
                     '2025-01-01T00:00:00.000Z',
@@ -35,7 +35,7 @@ describe('Request: do request', () => {
                 method: 'GET',
                 url: 'https://api.smooth-integration.com/v1/request/0730d67d-7d48-4a3a-8a72-04c0a4666fd0/tests/test',
                 hmacPayload:
-                    'clientId' +
+                    '5f95d989-8da6-4dfc-9cf6-35e873c75d36' +
                     'GET' +
                     'https://api.smooth-integration.com/v1/request/0730d67d-7d48-4a3a-8a72-04c0a4666fd0/tests/test' +
                     '2025-01-01T00:00:00.000Z',
@@ -67,7 +67,7 @@ describe('Request: do request', () => {
                 method: 'POST',
                 url: 'https://api.smooth-integration.com/v1/request/0730d67d-7d48-4a3a-8a72-04c0a4666fd0/tests/test',
                 hmacPayload:
-                    'clientId' +
+                    '5f95d989-8da6-4dfc-9cf6-35e873c75d36' +
                     'POST' +
                     'https://api.smooth-integration.com/v1/request/0730d67d-7d48-4a3a-8a72-04c0a4666fd0/tests/test' +
                     '2025-01-01T00:00:00.000Z',
@@ -93,7 +93,7 @@ describe('Request: do request', () => {
                 url: 'https://api.smooth-integration.com/v1/request/0730d67d-7d48-4a3a-8a72-04c0a4666fd0/tests/test',
                 body: '{"request":"body"}',
                 hmacPayload:
-                    'clientId' +
+                    '5f95d989-8da6-4dfc-9cf6-35e873c75d36' +
                     'POST' +
                     'https://api.smooth-integration.com/v1/request/0730d67d-7d48-4a3a-8a72-04c0a4666fd0/tests/test' +
                     '2025-01-01T00:00:00.000Z' +
@@ -121,7 +121,7 @@ describe('Request: do request', () => {
                 method: 'POST',
                 url: 'https://api.smooth-integration.com/v1/request/0730d67d-7d48-4a3a-8a72-04c0a4666fd0/tests/test',
                 hmacPayload:
-                    'clientId' +
+                    '5f95d989-8da6-4dfc-9cf6-35e873c75d36' +
                     'POST' +
                     'https://api.smooth-integration.com/v1/request/0730d67d-7d48-4a3a-8a72-04c0a4666fd0/tests/test' +
                     '2025-01-01T00:00:00.000Z' +
@@ -155,7 +155,7 @@ describe('Request: do request', () => {
                 method: 'PUT',
                 url: 'https://api.smooth-integration.com/v1/request/0730d67d-7d48-4a3a-8a72-04c0a4666fd0/tests/test',
                 hmacPayload:
-                    'clientId' +
+                    '5f95d989-8da6-4dfc-9cf6-35e873c75d36' +
                     'PUT' +
                     'https://api.smooth-integration.com/v1/request/0730d67d-7d48-4a3a-8a72-04c0a4666fd0/tests/test' +
                     '2025-01-01T00:00:00.000Z',
@@ -181,7 +181,7 @@ describe('Request: do request', () => {
                 url: 'https://api.smooth-integration.com/v1/request/0730d67d-7d48-4a3a-8a72-04c0a4666fd0/tests/test',
                 body: '{"request":"body"}',
                 hmacPayload:
-                    'clientId' +
+                    '5f95d989-8da6-4dfc-9cf6-35e873c75d36' +
                     'PUT' +
                     'https://api.smooth-integration.com/v1/request/0730d67d-7d48-4a3a-8a72-04c0a4666fd0/tests/test' +
                     '2025-01-01T00:00:00.000Z' +
@@ -210,7 +210,7 @@ describe('Request: do request', () => {
                 url: 'https://api.smooth-integration.com/v1/request/0730d67d-7d48-4a3a-8a72-04c0a4666fd0/tests/test',
                 body: '{"request":"body"}',
                 hmacPayload:
-                    'clientId' +
+                    '5f95d989-8da6-4dfc-9cf6-35e873c75d36' +
                     'PUT' +
                     'https://api.smooth-integration.com/v1/request/0730d67d-7d48-4a3a-8a72-04c0a4666fd0/tests/test' +
                     '2025-01-01T00:00:00.000Z' +
@@ -244,7 +244,7 @@ describe('Request: do request', () => {
                 method: 'PATCH',
                 url: 'https://api.smooth-integration.com/v1/request/0730d67d-7d48-4a3a-8a72-04c0a4666fd0/tests/test',
                 hmacPayload:
-                    'clientId' +
+                    '5f95d989-8da6-4dfc-9cf6-35e873c75d36' +
                     'PATCH' +
                     'https://api.smooth-integration.com/v1/request/0730d67d-7d48-4a3a-8a72-04c0a4666fd0/tests/test' +
                     '2025-01-01T00:00:00.000Z',
@@ -270,7 +270,7 @@ describe('Request: do request', () => {
                 url: 'https://api.smooth-integration.com/v1/request/0730d67d-7d48-4a3a-8a72-04c0a4666fd0/tests/test',
                 body: '{"request":"body"}',
                 hmacPayload:
-                    'clientId' +
+                    '5f95d989-8da6-4dfc-9cf6-35e873c75d36' +
                     'PATCH' +
                     'https://api.smooth-integration.com/v1/request/0730d67d-7d48-4a3a-8a72-04c0a4666fd0/tests/test' +
                     '2025-01-01T00:00:00.000Z' +
@@ -299,7 +299,7 @@ describe('Request: do request', () => {
                 url: 'https://api.smooth-integration.com/v1/request/0730d67d-7d48-4a3a-8a72-04c0a4666fd0/tests/test',
                 body: '{"request":"body"}',
                 hmacPayload:
-                    'clientId' +
+                    '5f95d989-8da6-4dfc-9cf6-35e873c75d36' +
                     'PATCH' +
                     'https://api.smooth-integration.com/v1/request/0730d67d-7d48-4a3a-8a72-04c0a4666fd0/tests/test' +
                     '2025-01-01T00:00:00.000Z' +
@@ -333,7 +333,7 @@ describe('Request: do request', () => {
                 method: 'DELETE',
                 url: 'https://api.smooth-integration.com/v1/request/0730d67d-7d48-4a3a-8a72-04c0a4666fd0/tests/test',
                 hmacPayload:
-                    'clientId' +
+                    '5f95d989-8da6-4dfc-9cf6-35e873c75d36' +
                     'DELETE' +
                     'https://api.smooth-integration.com/v1/request/0730d67d-7d48-4a3a-8a72-04c0a4666fd0/tests/test' +
                     '2025-01-01T00:00:00.000Z',
@@ -359,7 +359,7 @@ describe('Request: do request', () => {
                 url: 'https://api.smooth-integration.com/v1/request/0730d67d-7d48-4a3a-8a72-04c0a4666fd0/tests/test',
                 body: '{"request":"body"}',
                 hmacPayload:
-                    'clientId' +
+                    '5f95d989-8da6-4dfc-9cf6-35e873c75d36' +
                     'DELETE' +
                     'https://api.smooth-integration.com/v1/request/0730d67d-7d48-4a3a-8a72-04c0a4666fd0/tests/test' +
                     '2025-01-01T00:00:00.000Z' +
@@ -387,7 +387,7 @@ describe('Request: do request', () => {
                 method: 'DELETE',
                 url: 'https://api.smooth-integration.com/v1/request/0730d67d-7d48-4a3a-8a72-04c0a4666fd0/tests/test',
                 hmacPayload:
-                    'clientId' +
+                    '5f95d989-8da6-4dfc-9cf6-35e873c75d36' +
                     'DELETE' +
                     'https://api.smooth-integration.com/v1/request/0730d67d-7d48-4a3a-8a72-04c0a4666fd0/tests/test' +
                     '2025-01-01T00:00:00.000Z',
