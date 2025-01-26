@@ -16,7 +16,7 @@ See the [`@smooth-integration/sdk-node` API docs](https://smooth-integration.com
 
 ## Requirements
 
-Node 18 or higher.
+Node.js version 18 or higher, or Deno version 1.0.0 or higher.
 
 ## Installation
 
@@ -26,6 +26,7 @@ Install the package with:
 npm install @smooth-integration/sdk-node
 yarn add @smooth-integration/sdk-node
 pnpm install @smooth-integration/sdk-node
+deno add jsr:@smooth-integration/sdk-node
 ```
 
 ## Dependencies
@@ -92,10 +93,10 @@ logEvents();
 
 ## Usage with Deno
 
-Import using npm specifiers:
+SmoothIntegration is available on JSR, so you can import without a npm specifier.
 
 ```ts
-import Client from 'npm:@smooth-integration/sdk-node';
+import Client from '@smooth-integration/sdk-node';
 ```
 
 ## Streaming Events
@@ -131,11 +132,15 @@ To run them, you'll need to set your client id and client secret.
 Additionally, you will also need to create a DataSource in the SmoothIntegration dashboard and set the
 `dataSourceId` in the examples.
 
-| Example TS                                                                            | Description                                                |
-| ------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
-| [Minimal](https://github.com/SmoothIntegration/sdk-node/tree/master/examples/minimal) | Minimal code for OAuth of QuickBooks & retrieve live data. |
+| Example TS                                                                                      | Description                                |
+| ----------------------------------------------------------------------------------------------- | ------------------------------------------ |
+| [Minimal TS](https://github.com/SmoothIntegration/sdk-node/tree/master/examples/minimal-ts)     | Minimal example using NodeJS & TypeScript. |
+| [Minimal Deno](https://github.com/SmoothIntegration/sdk-node/tree/master/examples/minimal-deno) | Minimal example using Deno & TypeScript    |
 
 ## Development
+
+Development is done in NodeJS 23 using PNPM. Alternative environments may work, but are not tested.
+If you do not have PNPM installed, https://pnpm.io/installation.
 
 Run all tests:
 
@@ -143,5 +148,3 @@ Run all tests:
 $ pnpm install
 $ pnpm test
 ```
-
-If you do not have PNPM installed, https://pnpm.io/installation.

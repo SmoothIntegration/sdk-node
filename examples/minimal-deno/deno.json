@@ -1,0 +1,10 @@
+{
+    "tasks": {
+        "start": "deno run --allow-env --allow-read --allow-net --watch main.ts"
+    },
+    "imports": {
+        "@smooth-integration/sdk-node": "jsr:@smooth-integration/sdk-node@^0.3.0",
+        "@std/assert": "jsr:@std/assert@1",
+        "express": "npm:express@^5.0.1"
+    }
+}

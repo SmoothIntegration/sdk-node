@@ -1,4 +1,4 @@
-# Minimal example
+# Minimal NodeJS + TypeScript example
 
 This example demonstrates the minimum amount of code to allow for OAuth of QuickBooks and retrieve live data.
 

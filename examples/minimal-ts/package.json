@@ -1,5 +1,5 @@
 {
-    "name": "@smooth-integration/example-minimal",
+    "name": "@smooth-integration/example-minimal-ts",
     "author": "Thimo Visser (thimo.visser@gmail.com)",
     "license": "MIT",
     "scripts": {
