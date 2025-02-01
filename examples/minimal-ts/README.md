@@ -12,7 +12,7 @@ npm install
 
 To run this demo, you will need a free Smooth Integration account. You can sign up [here](https://app.smoothintegration.com/signup).
 
-You will need to get your Client ID and Client Secret, which can be found in the [Smooth Integration Dashboard > Secrets](https://app.smoothintegration.com/secrets).
+You will need to get your Client ID and Client Secret, which can be found in the [Smooth Integration Dashboard > Secrets](https://app.smoothintegration.com/authentication).
 
 Lastly, you will need a CompanyID of a Company on Smooth Integration, which you can create [Smooth Integration Dashboard > Companies](https://app.smoothintegration.com/companies).
 

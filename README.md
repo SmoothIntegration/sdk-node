@@ -38,7 +38,7 @@ If you require a lower version of Node.js, you will need to provide a shim for `
 ## Usage
 
 The package needs to be configured with your client id and client secret, which are
-available in the [SmoothIntegration Dashboard](https://app.smooth-integration.com/secrets). Require it with values:
+available in the [SmoothIntegration Dashboard](https://app.smooth-integration.com/authentication). Require it with values:
 
 ```js
 const client = require('@smooth-integration/sdk-node')({
