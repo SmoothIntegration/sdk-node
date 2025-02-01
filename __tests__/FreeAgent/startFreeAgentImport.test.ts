@@ -18,7 +18,7 @@ describe('FreeAgent: startImport', () => {
             clientId: TEST_CLIENT_ID,
             clientSecret: TEST_CLIENT_SECRET,
         });
-        await client.freeAgent.startImport(TEST_CONNECTION_ID);
+        await client.freeagent.startImport(TEST_CONNECTION_ID);
     });
 
     test('Raises SIError: Bad Request on 400 Response', async () => {
@@ -37,7 +37,7 @@ describe('FreeAgent: startImport', () => {
             clientId: TEST_CLIENT_ID,
             clientSecret: TEST_CLIENT_SECRET,
         });
-        await expect(client.freeAgent.startImport(TEST_CONNECTION_ID)).rejects.toThrow(
+        await expect(client.freeagent.startImport(TEST_CONNECTION_ID)).rejects.toThrow(
             expect.objectContaining({
                 name: SIError.name,
                 message: 'Bad Request: Invalid Connection ID',
@@ -61,7 +61,7 @@ describe('FreeAgent: startImport', () => {
             clientId: TEST_CLIENT_ID,
             clientSecret: TEST_CLIENT_SECRET,
         });
-        await expect(client.freeAgent.startImport(TEST_CONNECTION_ID)).rejects.toThrow(
+        await expect(client.freeagent.startImport(TEST_CONNECTION_ID)).rejects.toThrow(
             expect.objectContaining({
                 name: SIError.name,
                 message: "Unauthorized: Invalid 'X-Organisation' header",
@@ -85,7 +85,7 @@ describe('FreeAgent: startImport', () => {
             clientId: TEST_CLIENT_ID,
             clientSecret: TEST_CLIENT_SECRET,
         });
-        await expect(client.freeAgent.startImport(TEST_CONNECTION_ID)).rejects.toThrow(
+        await expect(client.freeagent.startImport(TEST_CONNECTION_ID)).rejects.toThrow(
             expect.objectContaining({
                 name: SIError.name,
                 message: 'Internal Server Error',

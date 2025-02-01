@@ -24,8 +24,8 @@ export default class Client {
     public request: Request;
 
     public xero: Xero;
-    public quickBooks: QuickBooks;
-    public freeAgent: FreeAgent;
+    public quickbooks: QuickBooks;
+    public freeagent: FreeAgent;
     public myob: MYOB;
 
     /**
@@ -89,8 +89,8 @@ export default class Client {
         this.request = new Request(this);
 
         this.xero = new Xero(this);
-        this.quickBooks = new QuickBooks(this);
-        this.freeAgent = new FreeAgent(this);
+        this.quickbooks = new QuickBooks(this);
+        this.freeagent = new FreeAgent(this);
         this.myob = new MYOB(this);
     }
 }

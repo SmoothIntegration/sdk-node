@@ -23,7 +23,7 @@ describe('FreeAgent: getConsentUrl', () => {
             clientId: TEST_CLIENT_ID,
             clientSecret: TEST_CLIENT_SECRET,
         });
-        const response = await client.freeAgent.getConsentUrl(TEST_COMPANY_ID);
+        const response = await client.freeagent.getConsentUrl(TEST_COMPANY_ID);
         expect(response).toBe('the-consent-url');
     });
 
@@ -48,7 +48,7 @@ describe('FreeAgent: getConsentUrl', () => {
             clientId: TEST_CLIENT_ID,
             clientSecret: TEST_CLIENT_SECRET,
         });
-        const response = await client.freeAgent.getConsentUrl(TEST_COMPANY_ID, true);
+        const response = await client.freeagent.getConsentUrl(TEST_COMPANY_ID, true);
         expect(response).toBe('the-consent-url');
     });
 
@@ -68,7 +68,7 @@ describe('FreeAgent: getConsentUrl', () => {
             clientId: TEST_CLIENT_ID,
             clientSecret: TEST_CLIENT_SECRET,
         });
-        await expect(client.freeAgent.getConsentUrl(TEST_COMPANY_ID)).rejects.toThrow(
+        await expect(client.freeagent.getConsentUrl(TEST_COMPANY_ID)).rejects.toThrow(
             expect.objectContaining({
                 name: SIError.name,
                 message: 'Bad Request: FreeAgent is not configured for this organisation',
@@ -92,7 +92,7 @@ describe('FreeAgent: getConsentUrl', () => {
             clientId: TEST_CLIENT_ID,
             clientSecret: TEST_CLIENT_SECRET,
         });
-        await expect(client.freeAgent.getConsentUrl('invalid-company-id')).rejects.toThrow(
+        await expect(client.freeagent.getConsentUrl('invalid-company-id')).rejects.toThrow(
             expect.objectContaining({
                 name: SIError.name,
                 message: "Unauthorized: Invalid 'X-Organisation' header",
@@ -116,7 +116,7 @@ describe('FreeAgent: getConsentUrl', () => {
             clientId: TEST_CLIENT_ID,
             clientSecret: TEST_CLIENT_SECRET,
         });
-        await expect(client.freeAgent.getConsentUrl(TEST_COMPANY_ID)).rejects.toThrow(
+        await expect(client.freeagent.getConsentUrl(TEST_COMPANY_ID)).rejects.toThrow(
             expect.objectContaining({
                 name: SIError.name,
                 message: 'Internal Server Error',
