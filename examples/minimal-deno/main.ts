@@ -16,7 +16,7 @@ const demoCompanyId = 'your_company_id';
 
 // Create a route to connect QuickBooks
 app.get('/connect-quickbooks', async (_: Request, res: Response) => {
-    const consentUrl = await client.quickBooks.getConsentUrl(demoCompanyId);
+    const consentUrl = await client.quickbooks.getConsentUrl(demoCompanyId);
     res.redirect(consentUrl);
 });
 

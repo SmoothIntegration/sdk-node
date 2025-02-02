@@ -1,16 +1,12 @@
 {
   "version": "4",
   "specifiers": {
-    "jsr:@smooth-integration/sdk-node@0.3": "0.3.0",
     "jsr:@std/assert@1": "1.0.11",
     "jsr:@std/internal@^1.0.5": "1.0.5",
     "npm:express@5.0.1": "5.0.1",
     "npm:express@^5.0.1": "5.0.1"
   },
   "jsr": {
-    "@smooth-integration/sdk-node@0.3.0": {
-      "integrity": "63fae25abdb4e48e27ab51a0cf242537b6e5a2a619290fdd7bc1874794547552"
-    },
     "@std/assert@1.0.11": {
       "integrity": "2461ef3c368fe88bc60e186e7744a93112f16fd110022e113a0849e94d1c83c1",
       "dependencies": [
@@ -449,7 +445,7 @@
   },
   "workspace": {
     "dependencies": [
-      "jsr:@smooth-integration/sdk-node@0.3",
+      "jsr:@smooth-integration/sdk-node@~0.3.2",
       "jsr:@std/assert@1",
       "npm:express@^5.0.1"
     ]
