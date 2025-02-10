@@ -18,7 +18,11 @@ export default class CDC {
             params.append('limit', config.limit.toString());
         }
         if (config.document_type) {
-            params.append('document_type', config.document_type.join(','));
+            if (Array.isArray(config.document_type)) {
+                params.append('document_type', config.document_type.join(','));
+            } else {
+                params.append('document_type', config.document_type);
+            }
         }
         if (config.company) {
             params.append('company', config.company);

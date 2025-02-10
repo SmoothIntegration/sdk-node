@@ -33,7 +33,7 @@ export type CDCConfig = {
      * Meta Events cannot be specified here, to include or exclude meta events, use the `meta` option.
      * If omitted, events for all document types are included.
      */
-    document_type?: DocumentType[];
+    document_type?: DocumentType | DocumentType[];
 
     /**
      * Only retrieve events from a specific company by its ID.

@@ -75,4 +75,27 @@ describe('CDC: get', () => {
         });
         expect(response).toEqual(SUCCESS_RESPONSE_BODY);
     });
+
+    test('can use pass single document_type', async () => {
+        mockFetch({
+            request: {
+                method: 'GET',
+                url: 'https://api.smooth-integration.com/v1/cdc?from=0&structure=raw&document_type=xero.invoice',
+            },
+            response: {
+                status: 200,
+                body: JSON.stringify(SUCCESS_RESPONSE_BODY),
+            },
+        });
+
+        const client = new SIClient({
+            clientId: TEST_CLIENT_ID,
+            clientSecret: TEST_CLIENT_SECRET,
+        });
+        const response = await client.cdc.get({
+            structure: 'raw',
+            document_type: 'xero.invoice',
+        });
+        expect(response).toEqual(SUCCESS_RESPONSE_BODY);
+    });
 });
